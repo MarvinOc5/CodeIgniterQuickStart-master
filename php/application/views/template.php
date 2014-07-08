@@ -83,7 +83,34 @@ ddsmoothmenu.init({
         <br style="clear: left" />
     </div> <!-- end of menu -->
 	<?php $this->load->view($content);?>
-	
+	         <form action="" method="post" class="niceform">
+		 
+         	  <?php echo form_open('cindex/login'); ?>
+         						
+                <fieldset>
+                    <dl>
+                        <dt><label for="email"></label></dt>
+                        <dd><font color="red"><?php if($this->session->flashdata('error')){ echo $this->session->flashdata('error'); } ?>
+						<?php if($this->session->flashdata('message')){ echo $this->session->flashdata('message'); } ?></font></dd>
+                    </dl>
+					<dl>
+                        <dt><label for="email">Username:</label></dt>
+                        <dd><?php echo form_input(array("id" => "username", "name" => "username", "size" => "54"))?></dd>
+                    </dl>
+                    <dl>
+                        <dt><label for="password">Password:</label></dt>
+                        <dd><?php echo form_password(array("id" => "password", "name" => "password", "size" => "54"))?>
+					</dd>
+                    </dl>
+        			<?php if(isset($_POST['redirect'])) : ?>
+				    <input type="hidden" name="redirect" value="<?php echo $_POST['redirect']; ?>" />
+				    <?php endif; ?>
+                     <dl class="submit">
+                     <dd>
+                    <input type="submit" name="submit" id="submit" value="Enter" />
+                     </dl>
+                    
+                </fieldset>
     <div id="templatemo_footer">
         <div class="cleaner"></div>
     </div> <!-- end of footer -->
@@ -91,7 +118,7 @@ ddsmoothmenu.init({
 
 <div id="templatemo_cr_bar_wrapper">
 	<div id="templatemo_cr_bar">
-    	All rights reserved Copyright © 2013 <a href="#">The Philippine Newlong Corporation</a>. <a href="http://www.templatemo.com" target="_parent">Home</a> | 
+    	All rights reserved Copyright ï¿½ 2013 <a href="#">The Philippine Newlong Corporation</a>. <a href="http://www.templatemo.com" target="_parent">Home</a> | 
     	<a href="http://www.templatemo.com" target="_parent">Products</a> | <a href="http://www.templatemo.com" target="_parent">About us</a> | <a href="http://www.templatemo.com" target="_parent">Contact us</a>
     </div>
 </div>
